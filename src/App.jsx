@@ -14,6 +14,8 @@ import MorePage from "@/components/pages/MorePage";
 import CardsPage from "@/components/pages/CardsPage";
 import ProfilePage from "@/components/pages/ProfilePage";
 import KYCOnboardingPage from "@/components/pages/KYCOnboardingPage";
+import TransactionHistoryPage from "@/components/pages/TransactionHistoryPage";
+import StatementsPage from "@/components/pages/StatementsPage";
 import Navigation from "@/components/organisms/Navigation";
 function App() {
   return (
@@ -23,12 +25,13 @@ function App() {
         {/* Main Content Area */}
         <main className="lg:ml-64 lg:pt-0 pt-16 pb-20 lg:pb-6">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-                <Routes>
+<Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/transfer" element={<TransferPage />} />
                     <Route path="/bills" element={<BillsPage />} />
+                    <Route path="/transactions" element={<TransactionHistoryPage />} />
+                    <Route path="/statements" element={<StatementsPage />} />
                     <Route path="/savings-goals" element={<SavingsGoalsPage />} />
-                    <Route path="/cards" element={<CardsPage />} />
                     <Route path="/cards" element={<CardsPage />} />
                     <Route path="/more" element={<MorePage />} />
                     <Route path="/profile" element={<ProfilePage />} />

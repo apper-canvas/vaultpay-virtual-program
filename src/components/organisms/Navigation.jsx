@@ -11,10 +11,11 @@ const Navigation = () => {
 const navigationItems = [
     { name: "Home", icon: "Home", path: "/" },
     { name: "Transfer", icon: "ArrowRightLeft", path: "/transfer" },
-    { name: "Bills", icon: "FileText", path: "/bills" },
+    { name: "Transactions", icon: "Receipt", path: "/transactions" },
+    { name: "Statements", icon: "FileText", path: "/statements" },
+    { name: "Bills", icon: "Calendar", path: "/bills" },
     { name: "Savings", icon: "Target", path: "/savings-goals" },
     { name: "Cards", icon: "CreditCard", path: "/cards" },
-    { name: "Profile", icon: "User", path: "/profile" },
     { name: "More", icon: "Grid3x3", path: "/more" }
   ];
 
