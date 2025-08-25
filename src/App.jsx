@@ -1,4 +1,4 @@
-import { Route, Router, Routes } from "react-router-dom";
+import { Route, BrowserRouter, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import React from "react";
 import BillsPage from "@/components/pages/BillsPage";
@@ -12,7 +12,7 @@ import Navigation from "@/components/organisms/Navigation";
 
 function App() {
   return (
-    <Router>
+<BrowserRouter>
       <div className="min-h-screen bg-gray-50">
         <Navigation />
         
@@ -45,7 +45,7 @@ function App() {
           theme="light"
         />
       </div>
-    </Router>
+</BrowserRouter>
   );
 }
 
