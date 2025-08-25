@@ -67,11 +67,11 @@ const navigationItems = [
           </div>
         </div>
 
-        <div className="p-4 border-t border-gray-200">
+<div className="p-4 border-t border-gray-200">
           <div className="bg-gradient-to-r from-sky/10 to-teal/10 rounded-xl p-4 text-center">
-            <ApperIcon name="HeadphonesIcon" size={32} className="text-sky mx-auto mb-2" />
-            <p className="text-sm font-semibold text-navy mb-1">24/7 Support</p>
-            <p className="text-xs text-gray-600">Get help anytime</p>
+            <ApperIcon name="MessageCircle" size={32} className="text-sky mx-auto mb-2" />
+            <p className="text-sm font-semibold text-navy mb-1">AI Chat Support</p>
+            <p className="text-xs text-gray-600">Get instant help 24/7</p>
           </div>
         </div>
       </nav>

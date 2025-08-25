@@ -234,39 +234,64 @@ const loadDashboardData = async () => {
             </div>
           </Card>
 
-          {/* Quick Stats */}
-          <Card className="p-6">
-            <h3 className="text-lg font-bold text-navy mb-4">Quick Stats</h3>
+{/* AI Chat Support */}
+          <Card className="p-6 bg-gradient-to-br from-sky/5 to-teal/5 border-sky/20">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center space-x-2">
+                <ApperIcon name="MessageCircle" size={20} className="text-sky" />
+                <h3 className="text-lg font-bold text-navy">AI Support</h3>
+              </div>
+              <Badge variant="success" size="small" className="bg-green-100 text-green-700">
+                24/7 Online
+              </Badge>
+            </div>
+            
             <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-gradient-to-br from-sky/20 to-teal/20 rounded-full flex items-center justify-center">
-                    <ApperIcon name="CreditCard" size={16} className="text-sky" />
+              <div className="bg-white/60 rounded-lg p-4">
+                <div className="flex items-start space-x-3">
+                  <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-full flex items-center justify-center flex-shrink-0">
+                    <ApperIcon name="Bot" size={16} className="text-white" />
                   </div>
-                  <span className="text-sm text-gray-600">Active Cards</span>
-                </div>
-                <span className="font-semibold text-navy">2</span>
-              </div>
-              
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-gradient-to-br from-warning/20 to-orange-200 rounded-full flex items-center justify-center">
-                    <ApperIcon name="FileText" size={16} className="text-warning" />
+                  <div className="flex-1">
+                    <p className="text-sm text-gray-700 mb-2">
+                      "Hi! I can help you with account balance, transfers, bill payments, and more. Chat with me anytime!"
+                    </p>
+                    <div className="flex items-center space-x-4 text-xs text-gray-500">
+                      <span className="flex items-center space-x-1">
+                        <ApperIcon name="Globe" size={12} />
+                        <span>Multilingual</span>
+                      </span>
+                      <span className="flex items-center space-x-1">
+                        <ApperIcon name="Users" size={12} />
+                        <span>Human Handoff</span>
+                      </span>
+                    </div>
                   </div>
-                  <span className="text-sm text-gray-600">Pending Bills</span>
                 </div>
-                <Badge variant="warning" size="small">3</Badge>
               </div>
-              
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-gradient-to-br from-success/20 to-green-200 rounded-full flex items-center justify-center">
-                    <ApperIcon name="TrendingUp" size={16} className="text-success" />
-                  </div>
-                  <span className="text-sm text-gray-600">This Month</span>
+
+              <div className="grid grid-cols-2 gap-2 text-xs">
+                <div className="flex items-center space-x-2 text-gray-600">
+                  <div className="w-2 h-2 bg-success rounded-full"></div>
+                  <span>Instant responses</span>
                 </div>
-                <span className="text-success font-semibold">+12%</span>
+                <div className="flex items-center space-x-2 text-gray-600">
+                  <div className="w-2 h-2 bg-sky rounded-full"></div>
+                  <span>Banking expertise</span>
+                </div>
+                <div className="flex items-center space-x-2 text-gray-600">
+                  <div className="w-2 h-2 bg-teal rounded-full"></div>
+                  <span>Secure & Private</span>
+                </div>
+                <div className="flex items-center space-x-2 text-gray-600">
+                  <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                  <span>Always available</span>
+                </div>
               </div>
+
+              <p className="text-xs text-center text-gray-500 pt-2 border-t border-gray-200">
+                Click the chat button to get started →
+              </p>
             </div>
           </Card>
         </div>

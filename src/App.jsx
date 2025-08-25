@@ -9,7 +9,7 @@ import CardsPage from "@/components/pages/CardsPage";
 import SavingsGoalsPage from "@/components/pages/SavingsGoalsPage";
 import KYCOnboardingPage from "@/components/pages/KYCOnboardingPage";
 import Navigation from "@/components/organisms/Navigation";
-
+import ChatBot from "@/components/molecules/ChatBot";
 function App() {
   return (
 <BrowserRouter>
@@ -42,8 +42,11 @@ function App() {
           pauseOnFocusLoss
           draggable
           pauseOnHover
-          theme="light"
+theme="light"
         />
+
+        {/* AI ChatBot */}
+        <ChatBot />
       </div>
 </BrowserRouter>
   );
