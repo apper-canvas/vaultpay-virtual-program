@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import accountService from "@/services/api/accountService";
+import savingsGoalService from "@/services/api/savingsGoalService";
 import AccountCard from "@/components/molecules/AccountCard";
 import QuickActions from "@/components/molecules/QuickActions";
 import RecentTransactions from "@/components/organisms/RecentTransactions";
@@ -11,10 +12,10 @@ import Card from "@/components/atoms/Card";
 import Badge from "@/components/atoms/Badge";
 import Loading from "@/components/ui/Loading";
 import Error from "@/components/ui/Error";
-
 const HomePage = () => {
   const [accounts, setAccounts] = useState([]);
   const [totalBalance, setTotalBalance] = useState(0);
+  const [savingsProgress, setSavingsProgress] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
@@ -22,18 +23,20 @@ const HomePage = () => {
     loadDashboardData();
   }, []);
 
-  const loadDashboardData = async () => {
+const loadDashboardData = async () => {
     try {
       setLoading(true);
       setError("");
       
-      const [accountsData, totalData] = await Promise.all([
+      const [accountsData, totalData, savingsData] = await Promise.all([
         accountService.getAll(),
-        accountService.getTotalBalance()
+        accountService.getTotalBalance(),
+        savingsGoalService.getProgressSummary()
       ]);
       
       setAccounts(accountsData);
       setTotalBalance(totalData);
+      setSavingsProgress(savingsData);
     } catch (err) {
       setError(err.message);
     } finally {
@@ -111,12 +114,14 @@ const HomePage = () => {
             <div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
               <p className="text-white/80 text-sm mb-1">This Month Spent</p>
               <p className="text-2xl font-bold">₹33,400</p>
-            </div>
-            <div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
-              <p className="text-white/80 text-sm mb-1">Savings Goal</p>
-              <p className="text-2xl font-bold">75% Complete</p>
+<div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
+              <p className="text-white/80 text-sm mb-1">Savings Goals</p>
+              <p className="text-2xl font-bold">
+                {savingsProgress ? `${savingsProgress.overallProgress}%` : "0%"} Complete
+              </p>
             </div>
           </div>
+        </div>
         </div>
       </motion.div>
 
@@ -159,30 +164,64 @@ const HomePage = () => {
         <div className="space-y-6">
           <BillsList showDueOnly={true} limit={4} />
           
-          {/* Savings Progress */}
+{/* Savings Progress */}
           <Card className="p-6">
-            <div className="flex items-center space-x-2 mb-4">
-              <ApperIcon name="Target" size={20} className="text-success" />
-              <h3 className="text-lg font-bold text-navy">Savings Progress</h3>
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center space-x-2">
+                <ApperIcon name="Target" size={20} className="text-success" />
+                <h3 className="text-lg font-bold text-navy">Savings Overview</h3>
+              </div>
+              <button
+                onClick={() => window.location.href = '/savings-goals'}
+                className="text-sky hover:text-sky/80 text-sm font-medium"
+              >
+                View All Goals →
+              </button>
             </div>
             
             <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-600">Monthly Goal</span>
-                <span className="font-semibold text-navy">₹50,000</span>
-              </div>
-              
-              <div className="w-full bg-gray-200 rounded-full h-3">
-                <div 
-                  className="bg-gradient-to-r from-success to-green-500 h-3 rounded-full transition-all duration-500"
-                  style={{ width: "75%" }}
-                ></div>
-              </div>
-              
-              <div className="flex items-center justify-between text-sm">
-                <span className="text-gray-600">₹37,500 saved</span>
-                <span className="text-success font-semibold">75% complete</span>
-              </div>
+              {savingsProgress ? (
+                <>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-600">Total Goals</span>
+                    <span className="font-semibold text-navy">{savingsProgress.totalGoals}</span>
+                  </div>
+                  
+                  <div className="w-full bg-gray-200 rounded-full h-3">
+                    <div 
+                      className="bg-gradient-to-r from-success to-green-500 h-3 rounded-full transition-all duration-500"
+                      style={{ width: `${Math.min(savingsProgress.overallProgress, 100)}%` }}
+                    ></div>
+                  </div>
+                  
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-600">
+                      {formatBalance(savingsProgress.totalCurrentAmount)} saved
+                    </span>
+                    <span className="text-success font-semibold">
+                      {savingsProgress.overallProgress}% complete
+                    </span>
+                  </div>
+
+                  <div className="flex items-center justify-between pt-2 border-t border-gray-100">
+                    <span className="text-sm text-gray-600">Completed Goals</span>
+                    <Badge variant="success" size="small">
+                      {savingsProgress.completedGoals}
+                    </Badge>
+                  </div>
+                </>
+              ) : (
+                <div className="text-center py-8 text-gray-500">
+                  <ApperIcon name="Target" size={48} className="mx-auto mb-3 text-gray-300" />
+                  <p className="text-sm">No savings goals yet</p>
+                  <button 
+                    onClick={() => window.location.href = '/savings-goals'}
+                    className="text-sky hover:text-sky/80 text-sm font-medium mt-2"
+                  >
+                    Create your first goal
+                  </button>
+                </div>
+              )}
             </div>
           </Card>
 

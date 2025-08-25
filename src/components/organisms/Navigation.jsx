@@ -8,10 +8,11 @@ const Navigation = () => {
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const navigationItems = [
+const navigationItems = [
     { name: "Home", icon: "Home", path: "/" },
     { name: "Transfer", icon: "ArrowRightLeft", path: "/transfer" },
     { name: "Bills", icon: "FileText", path: "/bills" },
+    { name: "Savings", icon: "Target", path: "/savings-goals" },
     { name: "Cards", icon: "CreditCard", path: "/cards" },
     { name: "More", icon: "Grid3x3", path: "/more" }
   ];

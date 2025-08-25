@@ -8,7 +8,7 @@ const Badge = React.forwardRef(({
   children, 
   ...props 
 }, ref) => {
-  const getVariantStyles = () => {
+const getVariantStyles = () => {
     switch (variant) {
       case "success":
         return "bg-gradient-to-r from-success/10 to-green-100 text-success border border-success/20";
@@ -24,6 +24,12 @@ const Badge = React.forwardRef(({
         return "border-2 border-sky text-sky bg-transparent";
       case "premium":
         return "bg-gradient-to-r from-sky/10 to-teal/10 text-navy border border-sky/30 premium-shadow";
+      case "completed":
+        return "bg-gradient-to-r from-success/20 to-green-200 text-success border border-success/30";
+      case "almost":
+        return "bg-gradient-to-r from-info/20 to-blue-200 text-info border border-info/30";
+      case "progress":
+        return "bg-gradient-to-r from-warning/20 to-orange-200 text-warning border border-warning/30";
       default:
         return "bg-gradient-to-r from-sky/10 to-teal/10 text-sky border border-sky/20";
     }

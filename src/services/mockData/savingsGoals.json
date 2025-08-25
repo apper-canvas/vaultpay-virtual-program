@@ -1,0 +1,98 @@
+[
+  {
+    "Id": 1,
+    "title": "Dream Vacation to Japan",
+    "description": "Two weeks exploring Tokyo, Kyoto, and Mount Fuji with family",
+    "targetAmount": 150000,
+    "currentAmount": 87500,
+    "targetDate": "2024-12-01",
+    "icon": "Plane",
+    "monthlyContribution": 12500,
+    "createdAt": "2024-01-15T00:00:00Z",
+    "updatedAt": "2024-01-20T00:00:00Z"
+  },
+  {
+    "Id": 2,
+    "title": "Emergency Fund",
+    "description": "6 months of living expenses for financial security",
+    "targetAmount": 300000,
+    "currentAmount": 125000,
+    "targetDate": "2024-08-30",
+    "icon": "Target",
+    "monthlyContribution": 15000,
+    "createdAt": "2023-12-01T00:00:00Z",
+    "updatedAt": "2024-01-18T00:00:00Z"
+  },
+  {
+    "Id": 3,
+    "title": "New MacBook Pro",
+    "description": "Latest MacBook Pro for professional work and creative projects",
+    "targetAmount": 180000,
+    "currentAmount": 165000,
+    "targetDate": "2024-03-15",
+    "icon": "Smartphone",
+    "monthlyContribution": 18000,
+    "createdAt": "2023-11-01T00:00:00Z",
+    "updatedAt": "2024-01-19T00:00:00Z"
+  },
+  {
+    "Id": 4,
+    "title": "Wedding Celebration",
+    "description": "Beautiful wedding ceremony and reception for 200 guests",
+    "targetAmount": 800000,
+    "currentAmount": 240000,
+    "targetDate": "2025-02-14",
+    "icon": "Heart",
+    "monthlyContribution": 25000,
+    "createdAt": "2024-01-01T00:00:00Z",
+    "updatedAt": "2024-01-21T00:00:00Z"
+  },
+  {
+    "Id": 5,
+    "title": "Car Down Payment",
+    "description": "Down payment for a new Honda City",
+    "targetAmount": 200000,
+    "currentAmount": 45000,
+    "targetDate": "2024-09-30",
+    "icon": "Car",
+    "monthlyContribution": 8000,
+    "createdAt": "2024-01-10T00:00:00Z",
+    "updatedAt": "2024-01-17T00:00:00Z"
+  },
+  {
+    "Id": 6,
+    "title": "Master's Degree",
+    "description": "MBA program tuition and living expenses",
+    "targetAmount": 500000,
+    "currentAmount": 75000,
+    "targetDate": "2025-06-30",
+    "icon": "GraduationCap",
+    "monthlyContribution": 20000,
+    "createdAt": "2023-10-01T00:00:00Z",
+    "updatedAt": "2024-01-16T00:00:00Z"
+  },
+  {
+    "Id": 7,
+    "title": "Home Theater Setup",
+    "description": "Complete 7.1 surround sound system and 75-inch OLED TV",
+    "targetAmount": 250000,
+    "currentAmount": 0,
+    "targetDate": "2024-11-15",
+    "icon": "Gamepad2",
+    "monthlyContribution": 0,
+    "createdAt": "2024-01-20T00:00:00Z",
+    "updatedAt": "2024-01-20T00:00:00Z"
+  },
+  {
+    "Id": 8,
+    "title": "House Down Payment",
+    "description": "20% down payment for 3BHK apartment in Bangalore",
+    "targetAmount": 1200000,
+    "currentAmount": 350000,
+    "targetDate": "2025-12-31",
+    "icon": "Home",
+    "monthlyContribution": 30000,
+    "createdAt": "2023-08-01T00:00:00Z",
+    "updatedAt": "2024-01-22T00:00:00Z"
+  }
+]
