@@ -121,9 +121,8 @@ const loadDashboardData = async () => {
               <p className="text-2xl font-bold">
                 {savingsProgress ? `${savingsProgress.overallProgress}%` : "0%"} Complete
               </p>
-            </div>
+</div>
           </div>
-        </div>
         </div>
       </motion.div>
 

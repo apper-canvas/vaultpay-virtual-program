@@ -36,8 +36,9 @@ case "premium":
         return "bg-gradient-to-r from-warning/20 to-orange-200 text-warning border border-warning/30";
       case "budget-safe":
         return "bg-gradient-to-r from-success/20 to-green-200 text-success border border-success/30";
-      default:
+default:
         return "bg-gradient-to-r from-sky/10 to-teal/10 text-sky border border-sky/20";
+    }
   };
 
   const getSizeStyles = () => {
