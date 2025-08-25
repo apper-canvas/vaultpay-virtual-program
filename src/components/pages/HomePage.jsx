@@ -112,9 +112,17 @@ const loadDashboardData = async () => {
               <p className="text-white/80 text-sm mb-1">Total Balance</p>
               <p className="text-2xl font-bold">{formatBalance(totalBalance)}</p>
             </div>
-<div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
-              <p className="text-white/80 text-sm mb-1">This Month Spent</p>
-              <p className="text-2xl font-bold">₹33,400</p>
+<div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm cursor-pointer hover:bg-white/20 transition-colors" onClick={() => window.location.href = '/credit-score'}>
+              <div className="flex items-center justify-between mb-1">
+                <p className="text-white/80 text-sm">Credit Score</p>
+                <ApperIcon name="TrendingUp" size={16} className="text-green-400" />
+              </div>
+              <p className="text-2xl font-bold">742</p>
+              <div className="flex items-center space-x-1 mt-1">
+                <Badge variant="success" className="text-xs px-2 py-0.5 bg-green-400/20 text-green-400 border-green-400/30">
+                  Excellent
+                </Badge>
+              </div>
             </div>
             <div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
               <p className="text-white/80 text-sm mb-1">Savings Goals</p>

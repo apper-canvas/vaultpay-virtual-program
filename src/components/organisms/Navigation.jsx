@@ -17,7 +17,7 @@ const navigationItems = [
     { name: "Bills", icon: "Calendar", path: "/bills" },
     { name: "Savings", icon: "Target", path: "/savings-goals" },
     { name: "Cards", icon: "CreditCard", path: "/cards" },
-    { name: "Calculator", icon: "Calculator", path: "/calculator" },
+    { name: "Credit Score", icon: "TrendingUp", path: "/credit-score" },
     { name: "More", icon: "Grid3x3", path: "/more" }
   ];
 

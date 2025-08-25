@@ -7,6 +7,7 @@ import DepositsPage from "@/components/pages/DepositsPage";
 import InvestmentsPage from "@/components/pages/InvestmentsPage";
 import InsurancePage from "@/components/pages/InsurancePage";
 import CalculatorPage from "@/components/pages/CalculatorPage";
+import CreditScorePage from "@/components/pages/CreditScorePage";
 import ChatBot from "@/components/molecules/ChatBot";
 import BillsPage from "@/components/pages/BillsPage";
 import HomePage from "@/components/pages/HomePage";
@@ -44,6 +45,7 @@ function App() {
 <Route path="/investments" element={<InvestmentsPage />} />
                     <Route path="/insurance" element={<InsurancePage />} />
                     <Route path="/calculator" element={<CalculatorPage />} />
+                    <Route path="/credit-score" element={<CreditScorePage />} />
                 </Routes></div>
         </main>
         {/* Toast Notifications */}

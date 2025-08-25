@@ -154,11 +154,13 @@ items: [
     }
   ];
 
-  const handleItemClick = (route) => {
+const handleItemClick = (route) => {
     // For demo purposes, show a toast for unimplemented routes
     if (route === "/support") {
       // Simulate chat support
       console.log("Opening chat support...");
+    } else if (route === "/credit-score") {
+      navigate("/credit-score");
     } else {
       navigate(route);
     }
