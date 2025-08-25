@@ -1,0 +1,62 @@
+[
+  {
+    "Id": 1,
+    "billerId": "ELECTRICITY_001",
+    "billerName": "Electricity Board",
+    "amount": 1200.00,
+    "dueDate": "2024-01-25",
+    "status": "Due",
+    "category": "Utilities",
+    "accountNumber": "EB123456789",
+    "icon": "Zap",
+    "lastPaid": "2023-12-25"
+  },
+  {
+    "Id": 2,
+    "billerId": "MOBILE_001",
+    "billerName": "Airtel",
+    "amount": 599.00,
+    "dueDate": "2024-01-22",
+    "status": "Due",
+    "category": "Mobile",
+    "accountNumber": "9876543210",
+    "icon": "Smartphone",
+    "lastPaid": "2023-12-22"
+  },
+  {
+    "Id": 3,
+    "billerId": "INTERNET_001",
+    "billerName": "Airtel Broadband",
+    "amount": 999.00,
+    "dueDate": "2024-01-28",
+    "status": "Overdue",
+    "category": "Internet",
+    "accountNumber": "AB987654321",
+    "icon": "Wifi",
+    "lastPaid": "2023-11-28"
+  },
+  {
+    "Id": 4,
+    "billerId": "GAS_001",
+    "billerName": "Indane Gas",
+    "amount": 850.00,
+    "dueDate": "2024-02-05",
+    "status": "Upcoming",
+    "category": "Gas",
+    "accountNumber": "IG456789123",
+    "icon": "Flame",
+    "lastPaid": "2023-12-05"
+  },
+  {
+    "Id": 5,
+    "billerId": "INSURANCE_001",
+    "billerName": "LIC Premium",
+    "amount": 12000.00,
+    "dueDate": "2024-02-01",
+    "status": "Upcoming",
+    "category": "Insurance",
+    "accountNumber": "LIC789123456",
+    "icon": "Shield",
+    "lastPaid": "2024-01-01"
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "Id": 1,
+    "type": "Savings",
+    "balance": 125430.75,
+    "currency": "INR",
+    "status": "Active",
+    "accountNumber": "****7842",
+    "nickname": "Primary Savings"
+  },
+  {
+    "Id": 2,
+    "type": "Current",
+    "balance": 45200.00,
+    "currency": "INR",
+    "status": "Active",
+    "accountNumber": "****9123",
+    "nickname": "Business Account"
+  },
+  {
+    "Id": 3,
+    "type": "Fixed Deposit",
+    "balance": 200000.00,
+    "currency": "INR",
+    "status": "Active",
+    "accountNumber": "****6547",
+    "nickname": "6-Month FD",
+    "maturityDate": "2024-08-15"
+  }
+]

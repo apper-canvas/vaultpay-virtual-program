@@ -1,0 +1,47 @@
+[
+  {
+    "Id": 1,
+    "name": "Rajesh Kumar",
+    "accountNumber": "1234567890",
+    "bankCode": "HDFC0001234",
+    "bankName": "HDFC Bank",
+    "type": "IMPS",
+    "nickname": "Brother",
+    "verified": true,
+    "addedDate": "2024-01-10"
+  },
+  {
+    "Id": 2,
+    "name": "Priya Sharma",
+    "accountNumber": "9876543210",
+    "bankCode": "SBIN0005678",
+    "bankName": "State Bank of India",
+    "type": "NEFT",
+    "nickname": "Sister",
+    "verified": true,
+    "addedDate": "2024-01-08"
+  },
+  {
+    "Id": 3,
+    "name": "Tech Solutions Pvt Ltd",
+    "accountNumber": "5555666677",
+    "bankCode": "ICIC0001111",
+    "bankName": "ICICI Bank",
+    "type": "RTGS",
+    "nickname": "Vendor",
+    "verified": true,
+    "addedDate": "2024-01-05"
+  },
+  {
+    "Id": 4,
+    "name": "Amit Patel",
+    "accountNumber": "7778889990",
+    "bankCode": "AXIS0002222",
+    "bankName": "Axis Bank",
+    "type": "UPI",
+    "nickname": "Friend",
+    "upiId": "amit@paytm",
+    "verified": true,
+    "addedDate": "2024-01-03"
+  }
+]

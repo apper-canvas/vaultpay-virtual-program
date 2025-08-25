@@ -1,0 +1,22 @@
+[
+  {
+    "Id": 1,
+    "month": "January 2024",
+    "categories": [
+      {"name": "Food & Dining", "amount": 8500, "percentage": 25.5, "transactions": 15},
+      {"name": "Transportation", "amount": 4200, "percentage": 12.6, "transactions": 22},
+      {"name": "Shopping", "amount": 12000, "percentage": 36.0, "transactions": 8},
+      {"name": "Utilities", "amount": 3200, "percentage": 9.6, "transactions": 5},
+      {"name": "Healthcare", "amount": 5500, "percentage": 16.5, "transactions": 3}
+    ],
+    "totalSpent": 33400,
+    "budgetUsed": 75.2,
+    "savingsGoal": 50000,
+    "savedThisMonth": 12430.75,
+    "insights": [
+      "Your food spending is 15% higher than last month",
+      "Great job staying under your shopping budget!",
+      "You're on track to meet your savings goal"
+    ]
+  }
+]

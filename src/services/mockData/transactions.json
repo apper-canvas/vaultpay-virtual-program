@@ -1,0 +1,98 @@
+[
+  {
+    "Id": 1,
+    "accountId": "1",
+    "amount": -2500.00,
+    "type": "debit",
+    "category": "Food & Dining",
+    "merchant": "Zomato",
+    "date": "2024-01-20T14:30:00Z",
+    "status": "Completed",
+    "description": "Food delivery",
+    "upiId": "merchant@zomato"
+  },
+  {
+    "Id": 2,
+    "accountId": "1",
+    "amount": 15000.00,
+    "type": "credit",
+    "category": "Salary",
+    "merchant": "Tech Corp Ltd",
+    "date": "2024-01-19T10:00:00Z",
+    "status": "Completed",
+    "description": "Salary credit",
+    "reference": "SAL202401"
+  },
+  {
+    "Id": 3,
+    "accountId": "1",
+    "amount": -850.00,
+    "type": "debit",
+    "category": "Transportation",
+    "merchant": "Uber",
+    "date": "2024-01-19T08:45:00Z",
+    "status": "Completed",
+    "description": "Cab fare",
+    "upiId": "rides@uber"
+  },
+  {
+    "Id": 4,
+    "accountId": "1",
+    "amount": -3200.00,
+    "type": "debit",
+    "category": "Shopping",
+    "merchant": "Amazon",
+    "date": "2024-01-18T16:20:00Z",
+    "status": "Completed",
+    "description": "Online shopping",
+    "reference": "AMZ789456"
+  },
+  {
+    "Id": 5,
+    "accountId": "1",
+    "amount": -1200.00,
+    "type": "debit",
+    "category": "Utilities",
+    "merchant": "Electricity Board",
+    "date": "2024-01-17T12:15:00Z",
+    "status": "Completed",
+    "description": "Electricity bill payment",
+    "billNumber": "EB2024001"
+  },
+  {
+    "Id": 6,
+    "accountId": "2",
+    "amount": 8500.00,
+    "type": "credit",
+    "category": "Business",
+    "merchant": "Client Payment",
+    "date": "2024-01-16T14:30:00Z",
+    "status": "Completed",
+    "description": "Invoice payment",
+    "reference": "INV2024001"
+  },
+  {
+    "Id": 7,
+    "accountId": "1",
+    "amount": -5500.00,
+    "type": "debit",
+    "category": "Healthcare",
+    "merchant": "Apollo Hospital",
+    "date": "2024-01-15T11:00:00Z",
+    "status": "Completed",
+    "description": "Medical consultation",
+    "reference": "MED15012024"
+  },
+  {
+    "Id": 8,
+    "accountId": "1",
+    "amount": -750.00,
+    "type": "debit",
+    "category": "Entertainment",
+    "merchant": "Netflix",
+    "date": "2024-01-14T09:30:00Z",
+    "status": "Completed",
+    "description": "Monthly subscription",
+    "reference": "NET202401"
+  }
+]

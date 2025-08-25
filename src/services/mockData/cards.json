@@ -1,0 +1,61 @@
+[
+  {
+    "Id": 1,
+    "last4": "7842",
+    "type": "Debit",
+    "network": "Visa",
+    "status": "Active",
+    "expiryMonth": "12",
+    "expiryYear": "2027",
+    "cardholderName": "JOHN SMITH",
+    "limits": {
+      "dailyATM": 50000,
+      "dailyPOS": 200000,
+      "dailyOnline": 100000,
+      "usedATM": 5000,
+      "usedPOS": 25000,
+      "usedOnline": 15000
+    },
+    "cardColor": "gradient-to-br from-navy to-sky",
+    "accountId": "1"
+  },
+  {
+    "Id": 2,
+    "last4": "9123",
+    "type": "Credit",
+    "network": "Mastercard",
+    "status": "Active",
+    "expiryMonth": "08",
+    "expiryYear": "2028",
+    "cardholderName": "JOHN SMITH",
+    "limits": {
+      "creditLimit": 500000,
+      "availableCredit": 425000,
+      "usedCredit": 75000,
+      "minimumDue": 3750,
+      "dueDate": "2024-02-15"
+    },
+    "cardColor": "gradient-to-br from-teal to-sky",
+    "accountId": "2"
+  },
+  {
+    "Id": 3,
+    "last4": "6547",
+    "type": "Debit",
+    "network": "RuPay",
+    "status": "Blocked",
+    "expiryMonth": "06",
+    "expiryYear": "2026",
+    "cardholderName": "JOHN SMITH",
+    "limits": {
+      "dailyATM": 25000,
+      "dailyPOS": 100000,
+      "dailyOnline": 50000,
+      "usedATM": 0,
+      "usedPOS": 0,
+      "usedOnline": 0
+    },
+    "cardColor": "gradient-to-br from-gray-400 to-gray-600",
+    "accountId": "1"
+  }
+]
