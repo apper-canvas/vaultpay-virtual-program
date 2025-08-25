@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { cn } from "@/utils/cn";
 
 const Badge = React.forwardRef(({ 
@@ -22,7 +22,7 @@ const getVariantStyles = () => {
         return "bg-gradient-to-r from-gray-100 to-gray-200 text-gray-700 border border-gray-300";
       case "outline":
         return "border-2 border-sky text-sky bg-transparent";
-      case "premium":
+case "premium":
         return "bg-gradient-to-r from-sky/10 to-teal/10 text-navy border border-sky/30 premium-shadow";
       case "completed":
         return "bg-gradient-to-r from-success/20 to-green-200 text-success border border-success/30";
@@ -30,9 +30,14 @@ const getVariantStyles = () => {
         return "bg-gradient-to-r from-info/20 to-blue-200 text-info border border-info/30";
       case "progress":
         return "bg-gradient-to-r from-warning/20 to-orange-200 text-warning border border-warning/30";
+      case "budget-alert":
+        return "bg-gradient-to-r from-error/20 to-red-200 text-error border border-error/30 animate-pulse";
+      case "budget-warning":
+        return "bg-gradient-to-r from-warning/20 to-orange-200 text-warning border border-warning/30";
+      case "budget-safe":
+        return "bg-gradient-to-r from-success/20 to-green-200 text-success border border-success/30";
       default:
         return "bg-gradient-to-r from-sky/10 to-teal/10 text-sky border border-sky/20";
-    }
   };
 
   const getSizeStyles = () => {

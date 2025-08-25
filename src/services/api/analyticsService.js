@@ -22,20 +22,85 @@ class AnalyticsService {
       change: (Math.random() * 30 - 15).toFixed(1) // -15% to +15%
     }));
   }
-
-  async getBudgetProgress() {
+async getBudgetProgress() {
     await delay();
     const current = this.analytics[0];
-    return {
-      totalBudget: 45000,
-      totalSpent: current.totalSpent,
-      budgetUsed: current.budgetUsed,
-      remainingBudget: 45000 - current.totalSpent,
-      categories: current.categories.map(category => ({
+    
+    // Create realistic budget scenarios
+    const budgetMultipliers = {
+      "Food & Dining": 1.2,
+      "Transportation": 1.4,
+      "Shopping": 0.9, // Over budget scenario
+      "Utilities": 1.6,
+      "Healthcare": 2.0
+    };
+    
+    const categories = current.categories.map(category => {
+      const multiplier = budgetMultipliers[category.name] || 1.3;
+      const budget = Math.floor(category.amount * multiplier);
+      const isOverBudget = category.amount > budget;
+      
+      return {
         ...category,
-        budget: Math.floor(category.amount * 1.3), // Assume budget is 30% more than spent
-        isOverBudget: Math.random() > 0.8 // 20% chance of being over budget
-      }))
+        budget,
+        isOverBudget,
+        remainingBudget: budget - category.amount,
+        utilizationPercentage: Math.min((category.amount / budget * 100), 150).toFixed(1)
+      };
+    });
+    
+    const totalBudget = categories.reduce((sum, cat) => sum + cat.budget, 0);
+    const remainingBudget = totalBudget - current.totalSpent;
+    
+    return {
+      totalBudget,
+      totalSpent: current.totalSpent,
+      budgetUsed: ((current.totalSpent / totalBudget) * 100).toFixed(1),
+      remainingBudget,
+      categories,
+      alertsCount: categories.filter(cat => cat.isOverBudget).length,
+      warningsCount: categories.filter(cat => !cat.isOverBudget && (cat.amount / cat.budget * 100) >= 75).length
+    };
+  }
+
+  async getBudgetAnalytics() {
+    await delay();
+    const budgetData = await this.getBudgetProgress();
+    const current = this.analytics[0];
+    
+    // Generate budget insights
+    const insights = [];
+    const overBudgetCategories = budgetData.categories.filter(cat => cat.isOverBudget);
+    const highUsageCategories = budgetData.categories.filter(cat => !cat.isOverBudget && (cat.amount / cat.budget * 100) >= 75);
+    
+    if (overBudgetCategories.length > 0) {
+      insights.push(`You're over budget in ${overBudgetCategories.length} ${overBudgetCategories.length === 1 ? 'category' : 'categories'}`);
+    }
+    
+    if (highUsageCategories.length > 0) {
+      insights.push(`${highUsageCategories.length} ${highUsageCategories.length === 1 ? 'category is' : 'categories are'} nearing budget limits`);
+    }
+    
+    const bestCategory = budgetData.categories.reduce((best, cat) => {
+      const currentUsage = cat.amount / cat.budget * 100;
+      const bestUsage = best.amount / best.budget * 100;
+      return currentUsage < bestUsage ? cat : best;
+    });
+    
+    insights.push(`Great job managing your ${bestCategory.name} spending!`);
+    
+    if (budgetData.remainingBudget > 0) {
+      insights.push(`You have ${new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR" }).format(budgetData.remainingBudget)} left in your budget`);
+    }
+    
+    return {
+      ...budgetData,
+      insights,
+      recommendations: [
+        "Consider setting up spending alerts at 75% of budget",
+        "Review and adjust budgets monthly based on spending patterns",
+        "Use the 50/30/20 rule: 50% needs, 30% wants, 20% savings"
+      ]
     };
   }
 

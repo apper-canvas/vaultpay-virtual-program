@@ -23,8 +23,10 @@ const Button = React.forwardRef(({
         return "text-navy hover:bg-gray-100 hover:text-sky";
       case "danger":
         return "bg-gradient-to-r from-error to-red-500 text-white shadow-lg hover:shadow-xl hover:scale-[1.02]";
-      case "success":
+case "success":
         return "bg-gradient-to-r from-success to-green-500 text-white shadow-lg hover:shadow-xl hover:scale-[1.02]";
+      case "budget-alert":
+        return "bg-gradient-to-r from-error to-red-500 text-white shadow-lg hover:shadow-xl hover:scale-[1.02] animate-pulse";
       default:
         return "bg-gradient-to-r from-sky to-teal text-white shadow-lg hover:shadow-xl hover:scale-[1.02]";
     }

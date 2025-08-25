@@ -1,17 +1,18 @@
-import { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import accountService from "@/services/api/accountService";
-import savingsGoalService from "@/services/api/savingsGoalService";
+import ApperIcon from "@/components/ApperIcon";
 import AccountCard from "@/components/molecules/AccountCard";
 import QuickActions from "@/components/molecules/QuickActions";
-import RecentTransactions from "@/components/organisms/RecentTransactions";
-import BillsList from "@/components/organisms/BillsList";
-import SpendingAnalytics from "@/components/organisms/SpendingAnalytics";
-import ApperIcon from "@/components/ApperIcon";
 import Card from "@/components/atoms/Card";
 import Badge from "@/components/atoms/Badge";
-import Loading from "@/components/ui/Loading";
+import BillsList from "@/components/organisms/BillsList";
+import SpendingAnalytics from "@/components/organisms/SpendingAnalytics";
+import RecentTransactions from "@/components/organisms/RecentTransactions";
+import BudgetProgress from "@/components/organisms/BudgetProgress";
 import Error from "@/components/ui/Error";
+import Loading from "@/components/ui/Loading";
+import accountService from "@/services/api/accountService";
+import savingsGoalService from "@/services/api/savingsGoalService";
 const HomePage = () => {
   const [accounts, setAccounts] = useState([]);
   const [totalBalance, setTotalBalance] = useState(0);
@@ -111,10 +112,11 @@ const loadDashboardData = async () => {
               <p className="text-white/80 text-sm mb-1">Total Balance</p>
               <p className="text-2xl font-bold">{formatBalance(totalBalance)}</p>
             </div>
-            <div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
+<div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
               <p className="text-white/80 text-sm mb-1">This Month Spent</p>
               <p className="text-2xl font-bold">₹33,400</p>
-<div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
+            </div>
+            <div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
               <p className="text-white/80 text-sm mb-1">Savings Goals</p>
               <p className="text-2xl font-bold">
                 {savingsProgress ? `${savingsProgress.overallProgress}%` : "0%"} Complete
@@ -153,6 +155,15 @@ const loadDashboardData = async () => {
         <QuickActions />
       </div>
 
+{/* Budget Progress */}
+      <div>
+        <h2 className="text-xl font-bold text-navy mb-4 flex items-center">
+          <ApperIcon name="Target" size={24} className="mr-2" />
+          Budget Overview
+        </h2>
+        <BudgetProgress compact={true} limit={3} />
+      </div>
+
       {/* Dashboard Grid */}
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
         <div className="xl:col-span-2 space-y-6">
@@ -163,7 +174,6 @@ const loadDashboardData = async () => {
 
         <div className="space-y-6">
           <BillsList showDueOnly={true} limit={4} />
-          
 {/* Savings Progress */}
           <Card className="p-6">
             <div className="flex items-center justify-between mb-4">

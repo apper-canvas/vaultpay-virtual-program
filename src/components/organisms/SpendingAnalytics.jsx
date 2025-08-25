@@ -248,6 +248,107 @@ const SpendingAnalytics = ({ showInsights = true }) => {
                 ))}
               </div>
             </div>
+</div>
+        )}
+
+        {activeTab === "budget" && (
+          <div className="space-y-6">
+            <div className="bg-gradient-to-r from-sky/5 to-teal/5 rounded-lg p-4 mb-4">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h4 className="font-semibold text-navy mb-1">Budget vs Actual Spending</h4>
+                  <p className="text-sm text-gray-600">Compare your spending against set budgets</p>
+                </div>
+                <Badge 
+                  variant={analytics.budgetUsed > 100 ? "error" : analytics.budgetUsed > 90 ? "warning" : "success"}
+                  size="large"
+                >
+                  {analytics.budgetUsed}% Used
+                </Badge>
+              </div>
+            </div>
+            
+            <div className="space-y-4">
+              {analytics.categories.map((category, index) => {
+                // Simulate budget data for each category
+                const budget = Math.floor(category.amount * 1.3);
+                const percentage = (category.amount / budget * 100);
+                const isOverBudget = category.amount > budget;
+                
+                return (
+                  <motion.div
+                    key={category.name}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    className={`p-4 rounded-lg border ${
+                      isOverBudget ? 'border-error/30 bg-error/5' : 'border-gray-200 bg-white'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="flex items-center space-x-3">
+                        <div className="w-8 h-8 bg-gradient-to-br from-sky/20 to-teal/20 rounded-full flex items-center justify-center">
+                          <ApperIcon 
+                            name={getCategoryIcon(category.name)} 
+                            size={16} 
+                            className="text-sky" 
+                          />
+                        </div>
+                        <div>
+                          <h5 className="font-semibold text-navy">{category.name}</h5>
+                          <p className="text-sm text-gray-600">
+                            {formatAmount(category.amount)} / {formatAmount(budget)}
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div className="text-right">
+                        <Badge 
+                          variant={isOverBudget ? "error" : percentage >= 90 ? "warning" : "success"}
+                          size="small"
+                        >
+                          {percentage.toFixed(1)}%
+                        </Badge>
+                      </div>
+                    </div>
+                    
+                    <div className="mb-2">
+                      <div className="w-full bg-gray-200 rounded-full h-2">
+                        <div 
+                          className={`h-2 rounded-full transition-all duration-1000 ${
+                            isOverBudget 
+                              ? 'bg-gradient-to-r from-error to-red-500' 
+                              : percentage >= 90
+                              ? 'bg-gradient-to-r from-warning to-orange-500'
+                              : 'bg-gradient-to-r from-success to-green-500'
+                          }`}
+                          style={{ width: `${Math.min(percentage, 100)}%` }}
+                        />
+                      </div>
+                    </div>
+                    
+                    {isOverBudget && (
+                      <div className="flex items-center space-x-2 text-error text-sm">
+                        <ApperIcon name="AlertTriangle" size={14} />
+                        <span>Over budget by {formatAmount(category.amount - budget)}</span>
+                      </div>
+                    )}
+                  </motion.div>
+                );
+              })}
+            </div>
+            
+            <div className="bg-gradient-to-r from-navy/5 to-sky/5 rounded-lg p-4">
+              <div className="flex items-center space-x-2 mb-2">
+                <ApperIcon name="Lightbulb" size={16} className="text-warning" />
+                <h5 className="font-semibold text-navy">Budget Insights</h5>
+              </div>
+              <ul className="text-sm text-gray-700 space-y-1">
+                <li>• Consider reducing shopping expenses to stay within budget</li>
+                <li>• Your food spending is well-managed this month</li>
+                <li>• Set up alerts when reaching 75% of category budgets</li>
+              </ul>
+            </div>
           </div>
         )}
       </Card>
