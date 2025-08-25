@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import React from "react";
+import AnalyticsPage from "@/components/pages/AnalyticsPage";
 import ApplyCardsPage from "@/components/pages/ApplyCardsPage";
 import DepositsPage from "@/components/pages/DepositsPage";
 import InvestmentsPage from "@/components/pages/InvestmentsPage";
@@ -31,6 +32,7 @@ function App() {
                     <Route path="/bills" element={<BillsPage />} />
                     <Route path="/transactions" element={<TransactionHistoryPage />} />
                     <Route path="/statements" element={<StatementsPage />} />
+                    <Route path="/analytics" element={<AnalyticsPage />} />
                     <Route path="/savings-goals" element={<SavingsGoalsPage />} />
                     <Route path="/cards" element={<CardsPage />} />
                     <Route path="/more" element={<MorePage />} />

@@ -13,6 +13,7 @@ const navigationItems = [
     { name: "Transfer", icon: "ArrowRightLeft", path: "/transfer" },
     { name: "Transactions", icon: "Receipt", path: "/transactions" },
     { name: "Statements", icon: "FileText", path: "/statements" },
+    { name: "Analytics", icon: "BarChart3", path: "/analytics" },
     { name: "Bills", icon: "Calendar", path: "/bills" },
     { name: "Savings", icon: "Target", path: "/savings-goals" },
     { name: "Cards", icon: "CreditCard", path: "/cards" },
