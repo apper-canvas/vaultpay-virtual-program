@@ -11,7 +11,15 @@ const MorePage = () => {
   const menuSections = [
     {
       title: "Account & Banking",
-      items: [
+items: [
+        {
+          icon: "ShieldCheck",
+          title: "eKYC Verification",
+          description: "Complete identity verification process",
+          route: "/kyc-onboarding",
+          color: "from-emerald-500 to-green-600",
+          badge: "Required"
+        },
         {
           icon: "User",
           title: "Profile Settings",

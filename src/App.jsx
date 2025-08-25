@@ -6,6 +6,7 @@ import TransferPage from "@/components/pages/TransferPage";
 import BillsPage from "@/components/pages/BillsPage";
 import CardsPage from "@/components/pages/CardsPage";
 import MorePage from "@/components/pages/MorePage";
+import KYCOnboardingPage from "@/components/pages/KYCOnboardingPage";
 
 function App() {
   return (
@@ -19,9 +20,10 @@ function App() {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/transfer" element={<TransferPage />} />
-              <Route path="/bills" element={<BillsPage />} />
+<Route path="/bills" element={<BillsPage />} />
               <Route path="/cards" element={<CardsPage />} />
               <Route path="/more" element={<MorePage />} />
+              <Route path="/kyc-onboarding" element={<KYCOnboardingPage />} />
             </Routes>
           </div>
         </main>
