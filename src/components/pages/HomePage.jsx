@@ -8,7 +8,7 @@ import Badge from "@/components/atoms/Badge";
 import BillsList from "@/components/organisms/BillsList";
 import SpendingAnalytics from "@/components/organisms/SpendingAnalytics";
 import RecentTransactions from "@/components/organisms/RecentTransactions";
-import BudgetProgress from "@/components/organisms/BudgetProgress";
+import BudgetProgress from "@/components/molecules/BudgetProgress";
 import Error from "@/components/ui/Error";
 import Loading from "@/components/ui/Loading";
 import accountService from "@/services/api/accountService";
