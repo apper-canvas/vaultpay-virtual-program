@@ -14,6 +14,7 @@ const navigationItems = [
     { name: "Bills", icon: "FileText", path: "/bills" },
     { name: "Savings", icon: "Target", path: "/savings-goals" },
     { name: "Cards", icon: "CreditCard", path: "/cards" },
+    { name: "Profile", icon: "User", path: "/profile" },
     { name: "More", icon: "Grid3x3", path: "/more" }
   ];
 
@@ -116,11 +117,14 @@ const navigationItems = [
             <h1 className="font-display font-bold text-lg gradient-text">VaultPay</h1>
           </div>
 
-          <div className="flex items-center space-x-3">
+<div className="flex items-center space-x-3">
             <button className="p-2 hover:bg-gray-50 rounded-lg transition-colors">
               <ApperIcon name="Bell" size={20} className="text-gray-600" />
             </button>
-            <button className="p-2 hover:bg-gray-50 rounded-lg transition-colors">
+            <button 
+              onClick={() => handleNavigation('/profile')}
+              className="p-2 hover:bg-gray-50 rounded-lg transition-colors"
+            >
               <ApperIcon name="User" size={20} className="text-gray-600" />
             </button>
           </div>

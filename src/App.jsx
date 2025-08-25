@@ -8,6 +8,7 @@ import MorePage from "@/components/pages/MorePage";
 import CardsPage from "@/components/pages/CardsPage";
 import SavingsGoalsPage from "@/components/pages/SavingsGoalsPage";
 import KYCOnboardingPage from "@/components/pages/KYCOnboardingPage";
+import ProfilePage from "@/components/pages/ProfilePage";
 import Navigation from "@/components/organisms/Navigation";
 import ChatBot from "@/components/molecules/ChatBot";
 function App() {
@@ -26,6 +27,7 @@ function App() {
               <Route path="/savings-goals" element={<SavingsGoalsPage />} />
               <Route path="/cards" element={<CardsPage />} />
               <Route path="/more" element={<MorePage />} />
+              <Route path="/profile" element={<ProfilePage />} />
               <Route path="/kyc-onboarding" element={<KYCOnboardingPage />} />
             </Routes>
           </div>
